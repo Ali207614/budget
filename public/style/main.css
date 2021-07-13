@@ -1,0 +1,11 @@
+td , #table , th {
+    border: 1px solid;
+    font-size: 19px;
+}
+#table{
+    width: 900px;
+}
+.container{
+    width: 1000px;
+    margin: 100px auto;
+}

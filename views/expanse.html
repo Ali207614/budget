@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/main.css">
+
+</head>
+<body>
+   <div class="container">
+    <h1>salom expanse</h1>
+
+    <form id="form" action="/expanse" method="POST" >
+        <input name="purpose" type="text" id="purpose" placeholder="maqsad...">
+        <input name="cost" type="number" id="cost" placeholder="summa...">
+        <button type="submit">send</button>
+    </form>
+
+    <table id="table" class="table" >
+        <tr class="table-header">
+            <th>N</th>
+            <th>Maqsad</th>
+            <th>Summa</th>
+            <th>Vaqt</th>
+            <th>O'chirish</th>
+        </tr>
+        <% for(let item in expanse) {  %>
+            <tr>
+                <td><%= +item + 1%></td>
+                <td><%=expanse[item].expanse_name%></td>
+                <td><%=expanse[item].expanse_cost%></td>
+                <td><%=expanse[item].expanse_date%></td>
+                <td><a href="/expanse/delete/<%=expanse[item].expanse_id%>">O'chirish </a></td>
+            </tr>
+        <%}%>
+    </table>
+   </div>
+</body>
+</html>
